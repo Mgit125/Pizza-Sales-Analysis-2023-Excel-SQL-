@@ -1,16 +1,21 @@
 ![logo](https://github.com/Mgit125/Pizza-Sales-Analysis-2023-Excel-SQL-Project/blob/main/Final%20Pizza%20Sales%20Dashboard.png)
 
-## Project : Pizza Sales Analysis - 2023 (Excel + SQL)
+## Project : Pizza Sales Analysis (Excel + SQL)
 
 ### Overview
+
 This project delves into a comprehensive analysis of pizza sales data from 2023, aiming to uncover valuable insights into business performance. Utilizing SQL Server and Excel, the project explores key performance indicators (KPIs) to understand sales trends, customer preferences, and operational efficiency.
 
 ### Key Objectives
 
 Data Analysis: Utilize SQL Server to extract and analyze key metrics from the pizza sales data.
+
 KPI Calculation: Calculate essential metrics such as total revenue, average order value, total pizzas sold, total orders, and average pizzas per order.
+
 Trend Identification: Identify busiest days, months, quarters, and times to understand peak demand periods.
+
 Product Performance: Analyze sales performance by pizza category, size, and individual pizza items.
+
 Visualization: Create an interactive Excel dashboard to visually represent key findings and facilitate data-driven decision-making.
 
 ### Methodology
