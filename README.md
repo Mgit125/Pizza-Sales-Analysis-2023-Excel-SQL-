@@ -175,14 +175,41 @@ GROUP BY pizza_size
 ORDER BY  sales_percentage_by_size DESC;
 ```
 
-
-
-9.	Find the Top 5 Best Sellers (pizza name)
-10.	Find the Lowest 5 Worst Sellers (pizza name) (bottom 5 pizzas sold)
-
 Total Pizzas Sold by Pizza Category
 
-Top and Bottom Sellers
+```sql
+SELECT 
+	pizza_category,
+	SUM(quantity) AS total_pizzas_sold
+FROM Pizza_sales_2023
+GROUP BY pizza_category
+ORDER BY total_pizzas_sold DESC;
+```
+
+
+Top 5 Best Sellers (pizza name)
+
+```sql
+SELECT TOP 5
+	pizza_name AS Best_sellers,
+	SUM(quantity) AS total_pizzas_sold
+FROM Pizza_sales_2023
+GROUP BY pizza_name
+ORDER BY total_pizzas_sold DESC;
+```
+
+Lowest 5 Worst Sellers (pizza name) (bottom 5 pizzas sold)
+
+```sql
+SELECT TOP 5
+	pizza_name AS Worst_sellers,
+	SUM(quantity) AS total_pizzas_sold
+FROM Pizza_sales_2023
+GROUP BY pizza_name
+ORDER BY total_pizzas_sold;
+```
+
+    
 
 ### Excel Dashboard Creation:
 
