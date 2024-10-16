@@ -45,6 +45,7 @@ FROM Pizza_sales_2023;
 ```
 
 Average Order Value
+
 ```SQL
 --- This query gives the Integer output without decimal values 
 SELECT 
@@ -63,7 +64,6 @@ SELECT
 CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) /
 CAST(COUNT(DISTINCT(order_id)) AS DECIMAL(10,2)) AS DECIMAL(10,2)) 
 FROM Pizza_sales_2023;
-
 ```
 
 Total Pizzas Sold
