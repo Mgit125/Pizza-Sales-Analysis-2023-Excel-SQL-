@@ -39,17 +39,17 @@ Execute SQL queries to calculate KPIs and analyze trends:
 
 Total Revenue
 
-```SQL
+```sql
 	SELECT ROUND(SUM(total_price), 2) AS Total_Revenue
 	FROM Pizza_sales_2023;
 ```
 
 Average Order Value
-	```SQL
-		SELECT 
-		ROUND(SUM(total_price)/ COUNT(DISTINCT(order_id)),2) AS Average_order_value_per_order
-		FROM Pizza_sales_2023;
-	```
+```SQL
+SELECT 
+ROUND(SUM(total_price)/ COUNT(DISTINCT(order_id)),2) AS Average_order_value_per_order
+FROM Pizza_sales_2023;
+```
 
 Total Pizzas Sold
 
