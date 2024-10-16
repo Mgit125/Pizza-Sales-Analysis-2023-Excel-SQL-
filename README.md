@@ -243,3 +243,5 @@ The "Classic" pizza category and "Large" size pizza contributed the most to sale
 ### Conclusion
 
 This project provides valuable insights into the pizza business's sales trends, customer preferences, and peak demand periods. These findings can be used to optimize operations, marketing strategies, and inventory management to improve overall business performance.
+
+![logo](https://github.com/Mgit125/Pizza-Sales-Analysis-2023-Excel-SQL-Project/blob/main/Picture1.jpg)
