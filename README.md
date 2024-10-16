@@ -26,13 +26,21 @@ Create the Pizza_sales_2023 table with appropriate columns.
 Execute SQL queries to calculate KPIs and analyze trends:
 
 Total Revenue
+
 Average Order Value
+
 Total Pizzas Sold
+
 Total Orders
+
 Average Pizzas Per Order
+
 Busiest Days, Months, Quarters, and Times
+
 Sales Percentage by Pizza Category and Size
+
 Total Pizzas Sold by Pizza Category
+
 Top and Bottom Sellers
 
 ### Excel Dashboard Creation:
@@ -43,11 +51,26 @@ Calculate additional metrics if needed.
 Create visualizations (charts, graphs) to represent key findings.
 
 ### Key Findings
-#### Revenue: Total revenue generated was approximately £817,860.
-#### Orders: Average order value was £38.31. A total of 21,350 orders were placed in 2023, with an average of 2.32 pizzas per order.
-#### Busiest Times: Mondays, Tuesdays, Saturdays, and Sundays were the busiest days. Peak order times were between 12-1 PM and 4-8 PM.
-#### Sales: The "Classic" pizza category and "Large" size pizza contributed the most to sales.
-#### Best and Worst Sellers: "Classic Deluxe" and "Chicken" pizzas were the best sellers, while "The Brie Carre" performed the worst in terms of both orders and revenue.
+
+#### Revenue: 
+
+Total revenue generated was approximately £817,860.
+
+#### Orders: 
+
+Average order value was £38.31. A total of 21,350 orders were placed in 2023, with an average of 2.32 pizzas per order.
+
+#### Busiest Times: 
+
+Mondays, Tuesdays, Saturdays, and Sundays were the busiest days. Peak order times were between 12-1 PM and 4-8 PM.
+
+#### Sales: 
+
+The "Classic" pizza category and "Large" size pizza contributed the most to sales.
+
+#### Best and Worst Sellers: 
+
+"Classic Deluxe" and "Chicken" pizzas were the best sellers, while "The Brie Carre" performed the worst in terms of both orders and revenue.
 
 ### Conclusion
 
