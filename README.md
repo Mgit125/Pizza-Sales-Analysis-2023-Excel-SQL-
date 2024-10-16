@@ -45,14 +45,72 @@ FROM Pizza_sales_2023;
 ```
 
 Average Order Value
+```SQL
+SELECT ROUND(SUM(total_price) / COUNT(DISTINCT(order_id)), 2)
+AS Average_order_value_per_order
+FROM Pizza_sales_2023;
+```
 
 Total Pizzas Sold
+```SQL
+SELECT SUM(quantity) AS Total_pizzas_sold
+FROM Pizza_sales_2023;
+```
 
 Total Orders
+```SQL
+SELECT COUNT(DISTINCT(order_id)) AS Total_orders
+FROM Pizza_sales_2023;
+```
 
 Average Pizzas Per Order
+```SQL
+SELECT CAST(SUM(quantity) AS DECIMAL(10, 2)) /
+       CAST(COUNT(DISTINCT(order_id)) AS DECIMAL(10, 2))
+FROM Pizza_sales_2023;
+```
 
 Busiest Days, Months, Quarters, and Times
+```SQL
+        --DW for Day of the Week (e.g., 'Monday', 'Tuesday')
+				--MONTH for the Month Name (e.g., 'January', 'February')
+					--YEAR for the Year (e.g., '2023')
+					--DAY for the Day of the Month (e.g., '1', '15', '31')
+					--QUARTER for the Quarter (e.g., '1', '2', '3', '4')
+-- DAILY TREND IN A WEEK OF PIZZA SALES 
+SELECT 
+	DATENAME(DW, order_date) AS Order_Day, 
+COUNT(DISTINCT order_id) AS total_orders
+FROM Pizza_sales_2023
+GROUP BY DATENAME(DW, order_date)
+ORDER BY COUNT(DISTINCT order_id) DESC;
+```
+```SQL-- MONTHLY TREND IN A WEEK OF PIZZA SALES 
+SELECT 
+	DATENAME(MONTH, order_date) AS Order_Month, 
+COUNT(DISTINCT order_id) AS total_orders
+FROM Pizza_sales_2023
+GROUP BY DATENAME(MONTH, order_date)
+ORDER BY COUNT(DISTINCT order_id) DESC;
+```
+```SQL
+-- Quarterly TREND OF PIZZA SALES 
+SELECT 
+	DATENAME(QUARTER, order_date) AS Order_QUARTER, 
+COUNT(DISTINCT order_id) AS total_orders
+FROM Pizza_sales_2023
+GROUP BY DATENAME(QUARTER, order_date)
+ORDER BY COUNT(DISTINCT order_id) DESC;
+```
+```SQL
+-- HOURLY TREND OF PIZZA SALES 
+	SELECT 
+		DATEPART(HOUR, order_time) AS Time_of_order_placed, 
+		COUNT(DISTINCT(order_id)) AS total_orders
+	FROM Pizza_sales_2023
+	GROUP BY DATEPART(HOUR, order_time)
+	ORDER BY COUNT(DISTINCT(order_id)) DESC;
+```
 
 Sales Percentage by Pizza Category and Size
 
