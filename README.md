@@ -40,8 +40,8 @@ Execute SQL queries to calculate KPIs and analyze trends:
 Total Revenue
 
 ```sql
-	SELECT ROUND(SUM(total_price), 2) AS Total_Revenue
-	FROM Pizza_sales_2023;
+SELECT ROUND(SUM(total_price), 2) AS Total_Revenue
+FROM Pizza_sales_2023;
 ```
 
 Average Order Value
@@ -53,38 +53,38 @@ FROM Pizza_sales_2023;
 
 Total Pizzas Sold
 
-	```SQL
-		SELECT SUM(quantity) AS Total_pizzas_sold
-		FROM Pizza_sales_2023;
-	```
+```SQL
+SELECT SUM(quantity) AS Total_pizzas_sold
+FROM Pizza_sales_2023;
+```
 
 Total Orders
 
-	```SQL
-		SELECT COUNT(DISTINCT(order_id)) AS Total_orders
-		FROM Pizza_sales_2023;
-	```
+```SQL
+SELECT COUNT(DISTINCT(order_id)) AS Total_orders
+FROM Pizza_sales_2023;
+```
 
 Average Pizzas Per Order
 
 ```SQL
-	--- This query gives the Integer output without decimal values 
-	SELECT 
-	SUM(quantity) /COUNT(DISTINCT(order_id)) AS pizzas_sold_per_order
-	FROM Pizza_sales_2023;
+--- This query gives the Integer output without decimal values 
+SELECT 
+SUM(quantity) /COUNT(DISTINCT(order_id)) AS pizzas_sold_per_order
+FROM Pizza_sales_2023;
 	
 	---- The CAST function is used to convert a value from one data type to another
 	
-	SELECT 
-	CAST(SUM(quantity) AS DECIMAL(10,2)) /
-	CAST(COUNT(DISTINCT(order_id)) AS DECIMAL(10,2)) 
-	FROM Pizza_sales_2023;
+SELECT 
+CAST(SUM(quantity) AS DECIMAL(10,2)) /
+CAST(COUNT(DISTINCT(order_id)) AS DECIMAL(10,2)) 
+FROM Pizza_sales_2023;
 	
 	--------- USE CAST() especially if you expect fractional averages
-	SELECT 
-	CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) /
-	CAST(COUNT(DISTINCT(order_id)) AS DECIMAL(10,2)) AS DECIMAL(10,2)) 
-	FROM Pizza_sales_2023;
+SELECT 
+CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) /
+CAST(COUNT(DISTINCT(order_id)) AS DECIMAL(10,2)) AS DECIMAL(10,2)) 
+FROM Pizza_sales_2023;
 ```
 
 Busiest Days, Months, Quarters, and Times
