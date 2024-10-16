@@ -25,10 +25,12 @@ Create an interactive Excel dashboard to visually represent key findings and fac
 
 ### Methodology
 
-Data Import and Database Creation:
+#### Data Import and Database Creation:
 
 Import the CSV/flat file into MS SQL Server.
+
 Create the Pizza_sales_2023_DB database.
+
 Create the Pizza_sales_2023 table with appropriate columns.
 
 ### SQL Server Analysis:
