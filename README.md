@@ -46,9 +46,24 @@ FROM Pizza_sales_2023;
 
 Average Order Value
 ```SQL
-SELECT ROUND(SUM(total_price) / COUNT(DISTINCT(order_id)), 2)
-AS Average_order_value_per_order
+--- This query gives the Integer output without decimal values 
+SELECT 
+SUM(quantity) /COUNT(DISTINCT(order_id)) AS pizzas_sold_per_order
 FROM Pizza_sales_2023;
+
+---- The CAST function is used to convert a value from one data type to another
+
+SELECT 
+CAST(SUM(quantity) AS DECIMAL(10,2)) /
+CAST(COUNT(DISTINCT(order_id)) AS DECIMAL(10,2)) 
+FROM Pizza_sales_2023;
+
+--------- USE CAST() especially if you expect fractional averages
+SELECT 
+CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) /
+CAST(COUNT(DISTINCT(order_id)) AS DECIMAL(10,2)) AS DECIMAL(10,2)) 
+FROM Pizza_sales_2023;
+
 ```
 
 Total Pizzas Sold
