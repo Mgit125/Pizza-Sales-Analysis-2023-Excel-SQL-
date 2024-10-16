@@ -90,11 +90,11 @@ FROM Pizza_sales_2023;
 Busiest Days, Months, Quarters, and Times
 
 ```SQL
-		        --DW for Day of the Week (e.g., 'Monday', 'Tuesday')
-						--MONTH for the Month Name (e.g., 'January', 'February')
-							--YEAR for the Year (e.g., '2023')
-							--DAY for the Day of the Month (e.g., '1', '15', '31')
-							--QUARTER for the Quarter (e.g., '1', '2', '3', '4')
+				--DW for Day of the Week (e.g., 'Monday', 'Tuesday')
+				--MONTH for the Month Name (e.g., 'January', 'February')
+				--YEAR for the Year (e.g., '2023')
+				--DAY for the Day of the Month (e.g., '1', '15', '31')
+				--QUARTER for the Quarter (e.g., '1', '2', '3', '4')
 		-- DAILY TREND IN A WEEK OF PIZZA SALES 
 SELECT 
 	DATENAME(DW, order_date) AS Order_Day, 
@@ -130,7 +130,55 @@ GROUP BY DATEPART(HOUR, order_time)
 ORDER BY COUNT(DISTINCT(order_id)) DESC;
 ```
 
-Sales Percentage by Pizza Category and Size
+Percentage of Sales by each Pizza Category 
+
+```sql
+
+	--- Query 1 produces values in terms of the 'percentage of total sales' that each pizza category contributes.
+SELECT 
+	pizza_category,
+	ROUND(SUM(total_price),2) AS total_sales,
+	ROUND(SUM(total_price)*100/ (SELECT SUM(total_price) FROM Pizza_sales_2023),2) AS sales_percentage_each_category
+FROM Pizza_sales_2023
+GROUP BY pizza_category
+ORDER BY pizza_category 
+
+----Query 2 produces values in terms of 'average revenue per order' for each pizza category.
+SELECT 
+	pizza_category,
+	ROUND(SUM(total_price)/COUNT(DISTINCT order_id),2) AS sales_percentage_each_category
+FROM Pizza_sales_2023
+GROUP BY pizza_category
+ORDER BY pizza_category ;
+```
+
+Percentage of Sales by each ‘Pizza Size ‘
+
+```sql
+SELECT 
+	pizza_size,
+	ROUND(SUM(total_price),2) AS total_sales,
+	ROUND(SUM(total_price)*100/ (SELECT SUM(total_price) FROM Pizza_sales_2023),2) AS sales_percentage_by_size
+FROM Pizza_sales_2023
+GROUP BY pizza_size
+ORDER BY  sales_percentage_by_size DESC;
+
+
+-- Finding the values for 1st quarter
+SELECT 
+	pizza_size,
+	ROUND(SUM(total_price),2) AS total_sales,
+	ROUND(SUM(total_price)*100/ (SELECT SUM(total_price) FROM Pizza_sales_2023 	WHERE DATEPART(quarter, order_date) = 1),2) AS sales_percentage_by_size
+FROM Pizza_sales_2023
+WHERE DATEPART(quarter, order_date) = 1
+GROUP BY pizza_size
+ORDER BY  sales_percentage_by_size DESC;
+```
+
+
+
+9.	Find the Top 5 Best Sellers (pizza name)
+10.	Find the Lowest 5 Worst Sellers (pizza name) (bottom 5 pizzas sold)
 
 Total Pizzas Sold by Pizza Category
 
