@@ -8,15 +8,20 @@ This project delves into a comprehensive analysis of pizza sales data from 2023,
 
 ### Key Objectives
 
-Data Analysis: Utilize SQL Server to extract and analyze key metrics from the pizza sales data.
+#### Data Analysis: 
+Utilize SQL Server to extract and analyze key metrics from the pizza sales data.
 
-KPI Calculation: Calculate essential metrics such as total revenue, average order value, total pizzas sold, total orders, and average pizzas per order.
+#### KPI Calculation: 
+Calculate essential metrics such as total revenue, average order value, total pizzas sold, total orders, and average pizzas per order.
 
-Trend Identification: Identify busiest days, months, quarters, and times to understand peak demand periods.
+#### Trend Identification: 
+Identify busiest days, months, quarters, and times to understand peak demand periods.
 
-Product Performance: Analyze sales performance by pizza category, size, and individual pizza items.
+#### Product Performance: 
+Analyze sales performance by pizza category, size, and individual pizza items.
 
-Visualization: Create an interactive Excel dashboard to visually represent key findings and facilitate data-driven decision-making.
+#### Visualization: 
+Create an interactive Excel dashboard to visually represent key findings and facilitate data-driven decision-making.
 
 ### Methodology
 
