@@ -38,10 +38,11 @@ Create the Pizza_sales_2023 table with appropriate columns.
 Execute SQL queries to calculate KPIs and analyze trends:
 
 Total Revenue
-'''SQL
+
+```SQL
 SELECT ROUND(SUM(total_price), 2) AS Total_Revenue
 FROM Pizza_sales_2023;
-'''
+```
 
 Average Order Value
 
