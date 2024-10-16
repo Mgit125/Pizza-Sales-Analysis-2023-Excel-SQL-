@@ -45,7 +45,26 @@ FROM Pizza_sales_2023;
 ```
 
 Average Order Value
+```SQL
+SELECT 
+ROUND(SUM(total_price)/ COUNT(DISTINCT(order_id)),2) AS Average_order_value_per_order
+FROM Pizza_sales_2023;
+```
 
+Total Pizzas Sold
+```SQL
+SELECT SUM(quantity) AS Total_pizzas_sold
+FROM Pizza_sales_2023;
+```
+
+Total Orders
+```SQL
+SELECT COUNT(DISTINCT(order_id)) AS Total_orders
+FROM Pizza_sales_2023;
+```
+
+Average Pizzas Per Order
+```SQL
 ```SQL
 --- This query gives the Integer output without decimal values 
 SELECT 
@@ -66,23 +85,7 @@ CAST(COUNT(DISTINCT(order_id)) AS DECIMAL(10,2)) AS DECIMAL(10,2))
 FROM Pizza_sales_2023;
 ```
 
-Total Pizzas Sold
-```SQL
-SELECT SUM(quantity) AS Total_pizzas_sold
-FROM Pizza_sales_2023;
-```
 
-Total Orders
-```SQL
-SELECT COUNT(DISTINCT(order_id)) AS Total_orders
-FROM Pizza_sales_2023;
-```
-
-Average Pizzas Per Order
-```SQL
-SELECT CAST(SUM(quantity) AS DECIMAL(10, 2)) /
-       CAST(COUNT(DISTINCT(order_id)) AS DECIMAL(10, 2))
-FROM Pizza_sales_2023;
 ```
 
 Busiest Days, Months, Quarters, and Times
